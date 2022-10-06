@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+background: url('../images/solar_system.jpeg') no-repeat center center fixed;
+background-size: cover;
+text-align: center;
+}
+
+h1, p{
+color: white;
+}
+
+h1{
+background-image: url('../images/new_purple.png');
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+font-size: 50px;
+font-weight: bold;
+font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+header{
+backdrop-filter: blur(10px);
+}
+p{
+font-size: 18px;
+}

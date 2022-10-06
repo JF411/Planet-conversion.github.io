@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weight Converter</title>
+<link rel="stylesheet" href="css/planet_convert.css">
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header> 
+<h1> Planet Weight Conversion</h1>	
+<p> This lab will return your weight on all the planets in our solar system</p>
+</header>
+	
+<form> 
+	
+<p> Enter your weight in pounds here:</p>	
+<input type="text" name="pounds" id="pounds">	
+
+<p> Enter your weight in kilograms here:</p>
+<input type="text" name="kilograms" id="kilograms">	
+<br>
+<br>
+<button type="button" id="calc" onclick="calculate()">Convert!</button>	
+
+<button type="button" id="refresh" onclick="refreshPage()"> Refresh!</button>
+
+</form>
+
+<p id="mercury"></p>
+<p id="venus"></p>
+<p id="mars"></p>
+<p id="jupiter"></p>
+<p id="saturn"></p>
+<p id="uranus"></p>
+<p id="neptune"></p>	
+
+<script>
+var input = document.getElementById("pounds");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("calc").click();
+  }
+});
+
+var lol = document.getElementById("kilograms");
+lol.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("calc").click();
+  }
+});	
+
+function calculate(){
+	
+var lb = document.getElementById("pounds").value;
+var kg = document.getElementById("kilograms").value;
+var mercury = 3.7;
+var venus = 8.87;
+var mars = 3.711;
+var jupiter = 24.79;
+var saturn = 10.44;
+var uranus = 8.69;
+var neptune = 11.15;
+if ( isNaN(lb) ){
+alert('Your first input is invalid, please use a valid input.');
+} 
+ 
+if (lb){
+
+let conlb = Number(lb, 10);
+var masslb = (conlb / 9.81).toFixed(2); //gives mass
+var mclb = (masslb * mercury).toFixed(2);
+var vlb = (masslb * venus).toFixed(2);
+var mlb = (masslb * mars).toFixed(2);
+var jlb = (masslb * jupiter).toFixed(2);
+var slb = (masslb * saturn).toFixed(2);
+var ulb = (masslb * uranus).toFixed(2);
+var nlb = (masslb * neptune).toFixed(2);
+
+document.getElementById("mercury").innerHTML = "Your weight on Mercury is " + mclb;
+document.getElementById("venus").innerHTML = "Your weight on Venus is " + vlb;
+document.getElementById("mars").innerHTML = "Your weight on Mars is " + mlb;
+document.getElementById("jupiter").innerHTML = "Your weight on Jupiter is " + jlb;
+document.getElementById("saturn").innerHTML = "Your weight on Saturn is " + slb;
+document.getElementById("uranus").innerHTML = "Your weight on Uranus is " + ulb;
+document.getElementById("neptune").innerHTML = "Your weight on Neptune is " + nlb;
+
+}
+
+if ( isNaN(kg) ){
+alert('Your second input is invalid, please use a valid input.');
+} 
+
+if (kg){
+
+let conkg = Number(kg, 10);
+var kgtolb = conkg * 2.2046226218;
+var roundlb = kgtolb.toFixed(2);
+var masskg = roundlb / 9.81; //gives mass
+var mckg = (masskg * mercury).toFixed(2);
+var vkg = (masskg * venus).toFixed(2);
+var mkg = (masskg * mars).toFixed(2);
+var jkg = (masskg * jupiter).toFixed(2);
+var skg = (masskg * saturn).toFixed(2);
+var ukg = (masskg * uranus).toFixed(2);
+var nkg = (masskg * neptune).toFixed(2);
+document.getElementById("mercury").innerHTML = "Your weight on Mercury is " + mckg;
+document.getElementById("venus").innerHTML = "Your weight on Venus is " + vkg;
+document.getElementById("mars").innerHTML = "Your weight on Mars is " + mkg;
+document.getElementById("jupiter").innerHTML = "Your weight on Jupiter is " + jkg;
+document.getElementById("saturn").innerHTML = "Your weight on Saturn is " + skg;
+document.getElementById("uranus").innerHTML = "Your weight on Uranus is " + ukg;
+document.getElementById("neptune").innerHTML = "Your weight on Neptune is " + nkg;
+}
+}
+
+	
+function refreshPage(){
+    window.location.reload();
+}
+
+calculate();
+	
+</script>
+	
+	<!--
+
+return document.getElementById("merres").innerHTML = mclb;
+return document.getElementById("venres").innerHTML = vlb;
+return document.getElementById("marres").innerHTML = mlb;
+return document.getElementById("jupres").innerHTML = jlb;
+return document.getElementById("satres").innerHTML = slb;
+return document.getElementById("urares").innerHTML = ulb;
+return document.getElementById("nepres").innerHTML = nlb;
+
+
+
+	return document.getElementById("merres").innerHTML = mckg;
+	return document.getElementById("venres").innerHTML = vkg;
+	return document.getElementById("marres").innerHTML = mkg;
+	return document.getElementById("jupres").innerHTML = jkg;
+	return document.getElementById("satres").innerHTML = skg;
+	return document.getElementById("urares").innerHTML = ukg;
+	return document.getElementById("nepres").innerHTML = nkg;
+
+
+document.getElementById("mercury").innerHTML = ;
+document.getElementById("venus").innerHTML = ;
+document.getElementById("mars").innerHTML = ;
+document.getElementById("jupiter").innerHTML = ;
+document.getElementById("saturn").innerHTML = ;
+document.getElementById("uranus").innerHTML = ;
+document.getElementById("neptune").innerHTML = ;
+
+-->
+	
+	
+	
+</body>
+</html>
